@@ -62,11 +62,11 @@ def assistantAPI(prompt):
 # add streamlit title
 st.title("HKN In Store Assistant Copilot")
 # Load the logo image
-logo_path = "heinekenlogo.png"  # Update this with the correct path to your logo
+#logo_path = "heinekenlogo.png"  # Update this with the correct path to your logo
 
 st.sidebar.empty()  # Create an empty space element
 # Add logo to the sidebar with some space above it
-st.sidebar.image(logo_path, use_column_width=True)
+#st.sidebar.image(logo_path, use_column_width=True)
 # Add a dropdown list (select box) to the sidebar
 st.sidebar.title("Choose Brand")
 brands = ["ALL","ABC", "Heineken", "Tiger","Anchor","Gold Crown"]
