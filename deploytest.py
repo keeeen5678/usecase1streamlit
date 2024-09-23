@@ -34,7 +34,7 @@ assistant_id = st.secrets["ASSISTANT_ID"]
 #     status = run.status
  
 #     while status not in ["completed", "cancelled", "expired", "failed"]:
-#         time.sleep(5)
+#         time.sleep(8)
 #         run = client.beta.threads.runs.retrieve(thread_id=thread.id,run_id=run.id)
 #         print("Elapsed time: {} minutes {} seconds".format(int((time.time() - start_time) // 60), int((time.time() - start_time) % 60)))
 #         status = run.status
@@ -74,8 +74,9 @@ def assistantAPI(prompt):
 
     # Poll until the run status is one of the terminal states
     status = run.status
-    while status not in ["completed", "cancelled", "expired", "failed"]:
-        time.sleep(5)
+    #while status not in ["completed", "cancelled", "expired", "failed"]
+    while status in ['queued', 'in_progress', 'cancelling']:
+        time.sleep(8)
         run = client.beta.threads.runs.retrieve(thread_id=thread.id, run_id=run.id)
         elapsed_time = time.time() - start_time
         print("Elapsed time: {} minutes {} seconds".format(int(elapsed_time // 60), int(elapsed_time % 60)))
