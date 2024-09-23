@@ -98,7 +98,8 @@ def assistantAPI(prompt):
                     responses.insert(0, content['text']['value'])
 
     # Get the last two responses in correct order
-    last_two_responses = responses[:2] if len(responses) >= 2 else responses
+    #last_two_responses = responses[:2] if len(responses) >= 2 else responses
+    last_two_responses = responses[:len(responses)] 
 
     # Join the last two responses into a single string
     full_response = "\n\n".join(last_two_responses) if last_two_responses else "No response found."
